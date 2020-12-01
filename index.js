@@ -75,6 +75,8 @@ export default class Toast extends Component {
                 }
             )
             this.animation.start(() => {
+                if (!this._isMounted) return
+
                 this.setState({
                     isShow: false,
                 });
@@ -86,8 +88,13 @@ export default class Toast extends Component {
         }, delay);
     }
 
+    componentDidMount() {
+        this._isMounted = true;
+    }
+
     componentWillUnmount() {
-        this.animation && this.animation.stop()
+        this._isMounted = false;
+        this.animation && this.animation.stop();
         this.timer && clearTimeout(this.timer);
     }
 
@@ -107,7 +114,7 @@ export default class Toast extends Component {
 
         const view = this.state.isShow ?
             <View
-                style={[styles.container, { top: pos }]}
+                style={[styles.container, { top: pos }, this.props.containerStyle]}
                 pointerEvents="none"
             >
                 <Animated.View

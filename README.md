@@ -12,29 +12,33 @@ A react native module to show toast like android, it works on iOS and Android.
 
 ## Content
 
-- [Installation](#installation)
-- [Demo](#demo)
-- [Getting started](#getting-started)
-- [API](#api)
-- [Contribution](#contribution)
+- [react-native-easy-toast](#react-native-easy-toast)
+  - [Content](#content)
+  - [Installation](#installation)
+  - [Demo](#demo)
+  - [Getting started](#getting-started)
+    - [Basic usage](#basic-usage)
+    - [Custom Toast](#custom-toast)
+  - [API](#api)
+  - [Contribution](#contribution)
 
 ## Installation
 
 * 1.Run `npm i react-native-easy-toast --save`
-* 2.`import Toast, {DURATION} from 'react-native-easy-toast'`    
+* 2.`import Toast, {DURATION} from 'react-native-easy-toast'`
 
-## Demo  
+## Demo
 * [Examples](https://github.com/crazycodeboy/react-native-easy-toast/tree/master/examples)
 
 ![Screenshots](https://raw.githubusercontent.com/crazycodeboy/react-native-easy-toast/master/examples/Screenshots/react-native-easy-toast-screenshots.gif)
 
-## Getting started  
+## Getting started
 
-Add `react-native-easy-toast` to your js file.   
+Add `react-native-easy-toast` to your js file.
 
-`import Toast, {DURATION} from 'react-native-easy-toast'`  
+`import Toast, {DURATION} from 'react-native-easy-toast'`
 
-Inside your component's render method, use Toast:   
+Inside your component's render method, use Toast:
 
 ```javascript
  render() {
@@ -49,13 +53,13 @@ Inside your component's render method, use Toast:
 
 >Note:  Add it in the bottom of the root view.
 
-Then you can use it like this:   
+Then you can use it like this:
 
 ```javascript
  this.refs.toast.show('hello world!');
 ```
 
-That's it, you're ready to go!  
+That's it, you're ready to go!
 
 show a toast, and execute callback function when toast close it:
 
@@ -92,7 +96,7 @@ Currently, the default delay for close() in FOREVER-mode is set to 250 ms (or th
 
 
 
-### Basic usage  
+### Basic usage
 
 ```javascript
 render() {
@@ -111,7 +115,7 @@ render() {
     }
 ```
 
-### Custom Toast   
+### Custom Toast
 
 ```javascript
 render() {
@@ -139,7 +143,7 @@ render() {
     }
 ```
 
-**More Usage:**    
+**More Usage:**
 
 [GitHubPopular](https://github.com/crazycodeboy/GitHubPopular/blob/develop/js/page/SearchPage.js)
 
@@ -150,6 +154,7 @@ render() {
 
 Props              | Type     | Optional | Default     | Description
 ----------------- | -------- | -------- | ----------- | -----------
+containerStyle  | View.propTypes.style  | true |   |   Custom container style
 style  | View.propTypes.style  | true | {backgroundColor: 'black',opacity: OPACITY,borderRadius: 5,padding: 10,}  |   Custom style toast
 position |  PropTypes.oneOf(['top','center','bottom',]) |true | 'bottom'  | Custom toast position
 positionValue  | React.PropTypes.number  | true | 120  |   Custom toast position value
@@ -163,7 +168,7 @@ textStyle  | View.propTypes.style  | true | {color:'white'}  |   Custom style te
 Method   |  Type     | Optional | Description
 ----------------- | -------- | -------- | -----------
 show(text, duration, callback)   | function | false | show a toast,unit is millisecond，and do callback
-close()  |   function  |  -   |   start the close timer    
+close()  |   function  |  -   |   start the close timer
 
 
 ## Contribution
